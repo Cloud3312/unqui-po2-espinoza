@@ -1,10 +1,8 @@
-package unq.po2.tp3.ejercicio8;
+package unq.po2.tp4.ejercicio4;
 
 import java.time.LocalDate;
 
-public class Persona {
-	//1- Al objeto cualquiera no le interesa como Persona calcula la edad,
-	// solo le interesa el resultado final.A esto se lo llama encapsulamiento
+public class Persona implements Recorrible{
 	
 	private String nombre;
 	private LocalDate fechaNacimiento;
@@ -13,7 +11,6 @@ public class Persona {
 		this.setNombre(nombre);
 		this.setFechaNacimiento(fechaNacimiento);
 	}
-
 	 
 	public String getNombre() {
 		return nombre;
@@ -40,16 +37,4 @@ public class Persona {
 		Integer edadDePersonaAComparar = persona.getEdad();
 		return (this.getEdad() < edadDePersonaAComparar);
 	}
-	
-	
-//	public static void main(String[] args) {
-//		LocalDate fecha = LocalDate.of(2000,07,06);
-//		Persona persona = new Persona("Braian", fecha);
-//		LocalDate fecha2 = LocalDate.of(1998,07,06);
-//		Persona persona2 = new Persona("Braian2",fecha2);
-		
-	public void imprimirFechaDeNacimiento() {
-		System.out.println(this.getFechaNacimiento());
-	}
-
 }
