@@ -22,29 +22,25 @@ public class ProductosTest {
 	
 	// Productos de primera necesidad
 	@Test
-	public void testCalcularCostoDeProductoDePrimeraNecesidad() {
+	public void test001CalcularCostoDeProductoDePrimeraNecesidad() {
 		assertEquals(90, leche.calcularCosto());
 	}
 	
-//	@Test 
-//	public void testReducirElStockEnUnoDelProductoDePrimeraNecesidad() {
-//		assertEquals(9, leche.reducirStock());
-//	}
 	
 	//Productos tradicionales 
 	@Test
-	public void testCalcularCostoTradicional() {
+	public void test002CalcularCostoTradicional() {
 		assertEquals(300, asado.calcularCosto());
 	}
 	
 	@Test
-	public void testPrecioDeUnProductoQueNoEstaEnStock(){
+	public void test003PrecioDeUnProductoQueNoEstaEnStock(){
 		assertEquals(0,vacio.calcularCosto());
 	}
 	
-//	@Test
-//	public void testReducirElStockEnUnoDelProductoTradicional() {
-//		
-//		assertEquals(4, asado.reducirStock());
-//	}
+	@Test 
+	public void test004ReducirElStockEnUnoDelProductoTradicional() {
+		asado.reducirStock();
+		assertEquals(4, asado.getStock());
+	}
 }
