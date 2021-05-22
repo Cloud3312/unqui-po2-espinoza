@@ -1,0 +1,100 @@
+-- output indirectos sonlos mensajes que retornan void normalmente cambian la estructura interna
+		 , entonces se le envia a otro objeto para ver donde estuvo el cambio
+-- input indirecto, generan excepciones, retornan valores, 		 
+	      
+-- dummy, no tiene comportamiento, sirve para sumar casos en una lista
+-- stub, se le preprograman returns a los mensajes, se divide en saboteour y responder,
+         el sabouteur devuelve excepciones y 
+         el responder devuelve inputs, o sea valores en el return
+-- mock, es el que tiene la capacidad de verificarse.Con verify(nombreMock).algo()
+
+-- spy  toma registro de lo que sale del SUT
+         
+1) ¿Qué son los test doubles?
+
+	Los test doubles son objetos que simulan ser instancias de una clase.Sirven para 
+	para realizar un test unitario en el cual cualquier conocimiento
+	hacia afuera del SUT,o sea los DOCs, seran un objeto falso, 
+	Sirve para solo testear una parte especifica del codigo.
+
+
+2) Enumere los tipos de test doubles y de ejemplos concretos de uso. Indique como usaría, cuando es posible,
+mockito para emular los diferentes tipos de tipos de test doubles.
+
+Dummy Object: este se utiliza para ocupar un lugar y no posee ningun comportamiento
+	
+	-Por ejemplo un banco que cuenta los clientes que posee.
+	 Siendo la clase Banco el sut y los clientes los dummies
+	
+	
+	public void test001unBancoTiene1Cliente() {
+		Banco banco = new Banco();
+		Cliente cliente = mock(Cliente.class);
+		
+		banco.agregarCliente(cliente);
+		
+		assertEquals(1, banco.getCantidadDeClientes()); 
+	}
+	
+
+Stub: es aquel que le preprogramamos respuestas para los mensajes.Le proveen al SUT inputs indirectos,
+	  es decir, excepciones, valores de retorno, o actualizaciones de variables pasadas por parametro
+	  
+	 Podemos clasificarlos en 2: responder y saboteur	
+
+	- El uso un responder es el que nos provee un input indirecto que deseamos para que nuestro 
+	Sut pueda ejecutar su comportamiento. Supongamos que un una red social tiene una lista de usuarios en un grupo
+	y una clase Usuario que sera el SUT, quiere obtener la cantidad de amigos que estan el el grupo dado.
+	
+	public void test_UnUsuarioLeEnviaUnMensajeALosAmigosQueEstanDentroDelGrupo1() {
+		Usuario usuario = new Usuario();
+		GrupoSocial grupo = mock(GrupoSocial);
+		when(grupo.getListaDeAmigosDeUsuario(usuario)).thenReturn(List.of("Maria", "Juan"));
+
+		assertEquals(2, usuario.cantidadDeAmigosDelGrupo(grupo));
+	}
+	
+	
+	- el Saboteur se usa para lanzar excepciones. Se busca romper el funcionamiento del SUT, ayuda
+	a crear casos mas complicados de alcanzar. 
+	En este caso un auto que posee un motor que al acelerar 
+	lance una excepcion de estar descompuesto.
+	
+	
+	public void test_UnAutoNoPuedeAcelerarYaQueElMotorLanzaUnaExcepcion() throws Exception {
+			Motor motor = mock(Motor.class);
+			Auto auto = new Auto(motor);
+			when(motor.acelerar()).thenThrows(new Exception("El motor es descompuesto"));
+			assertThrows(Exception.class, () -> auto.acelerar());
+		}
+		
+	
+	
+Spy : El  spy es aquel que se encarga de ser receptor de un mensaje que envia el Sut, 
+	  podemos usarlo en el test verificando dicha interaccion.
+		
+ {
+    List<Receta> spyListaDeRecetas = spy(new ArrayList<Receta>());	
+	SistemaDeRecetas sistemaR = new SistemaDeRecetas(spyListaDeRecetas);
+			
+	sistemaR.publicar(dummyReceta);
+	sistemaR.publicar(recetaAptaCeliaco);
+	
+	// Con el spy verifico que el se le mando correctamente el mensaje add a la collecion dentro del mensaje publicar.
+	assertEquals(sistemaR.cantidadDeRecetasPublicadas(), 2);
+	
+	// Ademas se verifica que el envio de mensajes se haga en orden esperado.	 
+	InOrder orden = inOrder(spyListaDeRecetas);			
+	orden.verify(spyListaDeRecetas).add(dummyReceta);
+	orden.verify(spyListaDeRecetas).add(recetaAptaCeliaco);
+			
+	// Verifico con el spy que se le mando el mensaje size a la colleccion para obtener la cantidad de recetas publicadas.
+	verify(spyListaDeRecetas).size();
+  }
+	  
+	  
+	  
+	  
+	  
+	  
+			

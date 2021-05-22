@@ -41,7 +41,7 @@ class BancoTest {
 	}
 	
 	@Test
-	void test004evaluaLaSolicitudesYVerificarQueSeHayaSumado1ALasAprobadas() {
+	void test004evaluaLaSolicitudesDeLosClientesYVerificarQueSeHayaSumado1ALasAprobadas() {
 		banco1.evaluarSolicitudesPendientes();
 		assertEquals(1,banco1.getSolicitudesAprobadas().size());
 		
