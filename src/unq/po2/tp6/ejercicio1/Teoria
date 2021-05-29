@@ -1,3 +1,36 @@
+							   ---- TEORIA TEST MOCKITO	----
+							   
+2) ¿Cómo se indica en mockito que el objeto mock debe recibir un secuencia 
+	de mensajes particular en un orden preestablecido? 
+	Agregue un ejemplo. 
+
+	ServiceClassA firstMock = mock(ServiceClassA.class);
+	ServiceClassB secondMock = mock(ServiceClassB.class);
+	
+	Mockito.doNothing().when(firstMock).methodOne();   
+	Mockito.doNothing().when(secondMock).methodTwo();  
+	
+	//Para comprobar el orden se usa: 
+	InOrder inOrder = inOrder(firstMock, secondMock);
+	
+	//aca se verifica que mensajes fueron primero 
+	inOrder.verify(firstMock).methodOne();
+	inOrder.verify(secondMock).methodTwo();
+
+
+
+4) 
+
+
+5) ¿Como es la forma de verificación con mockito?
+ A traves del verify, en este caso que al mockito le llego el mensaje getNumero 1 vez 
+ verify(carta5D,times(1)).getNumero();
+
+
+
+								---- TEORIA TEST DOUBLE	----
+								
+
 -- output indirectos sonlos mensajes que retornan void normalmente cambian la estructura interna
 		 , entonces se le envia a otro objeto para ver donde estuvo el cambio
 -- input indirecto, generan excepciones, retornan valores, 		 

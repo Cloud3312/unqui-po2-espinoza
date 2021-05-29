@@ -1,0 +1,10 @@
+Observaciones
+
+	Ventajas del modelo: 
+	El sujeto va a poder mandar distintos tipos de notificaciones a traves del update, 
+	ya sea por humedad, por temperatura maxima, entre otros casos.
+	
+	Desventajas: puede que los observadores reciban notificaciones que no le interesen.
+	Ademas puede que si o si los observadores que reciben el update van a tener que esperar
+	un argumento que sea String.
+	El sujeto tiene que ser subclase de Observable.

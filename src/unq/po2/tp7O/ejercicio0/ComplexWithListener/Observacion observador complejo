@@ -1,0 +1,9 @@
+Observaciones
+
+	Ventajas del modelo: 
+	El sujeto en vez de tener un update general, va a tener un mensaje especifico
+	por cambio que haya. 
+	Entonces el sujeto no tiene que ser subclase de nadie.
+	
+	Desventajas: Los observadores van a tener que implementar mensajes
+	que no le sean utiles, o retornen vacio

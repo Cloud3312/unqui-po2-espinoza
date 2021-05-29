@@ -1,0 +1,29 @@
+1. Utilizando las ideas propuestas por el pattern resuelva los ejercicios siguientes.
+2. Responda:
+	a. ¿Dónde se define el esqueleto del algoritmo?
+		En la superclase, el esqueleto es aquel algoritmo compuesto de llamadas
+		normalmente a operaciones primitivas abstractas, las subclases implementan
+		estas operaciones, pero no alteran el esqueleto
+	
+	b. ¿Se puede redefinir el esqueleto?
+	No
+	
+	c. ¿Qué es lo que se puede redefinir? 
+	Los metodos que sean abstractos en la superclase. O todos
+	aquellos metodos que no alteren el esqueleto de la superclase
+	
+	d. ¿Qué es un hook method?
+	Es un metodo que esta definido en la superclase y que como implementacion
+	es no hacer nada.Sirve de "gancho" a las subclases para que estas tengan
+	que implementarle un comportamiento.
+	
+	
+	3. Busque dos ejemplos del patrón en las clases de la imagen de Smalltalk.
+	 
+	4. Para cada ejemplo, realice un diagrama de clases indicando:
+	
+	a. La clase abstracta.
+	b. El template method.
+	c. Al menos dos clases concretas.
+	d. Los métodos en la clase abstracta que se redefinen en la clase concreta.
+	e. Indique hooks methods.

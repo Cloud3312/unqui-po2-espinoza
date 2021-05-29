@@ -34,4 +34,6 @@ class RectangulooTest {
 	void testIdentificarRectangulo() {
 		assertEquals("Es horizontal", this.rectangulo.identificarRectangulo());
 	}
+	
+	
 }

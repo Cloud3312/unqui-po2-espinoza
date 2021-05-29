@@ -1,0 +1,16 @@
+##### 7.6.2.
+
+ Un adaptador de clase puede adaptar comportamiento de una única clase de la
+ cual hereda, mientras que un adaptador de objeto puede conocer varios objetos 
+ que se correspondan a distintas subclases de una clase adaptada.
+
+ En el adaptador de objeto resulta más complicada cambiar cierto comportamiento
+ de la clase adaptada, sin embargo en el adaptador de clase se pueden overridear 
+ métodos de la superclase adaptada fácilmente.
+
+##### 7.6.3.
+
+El adaptador de objeto se puede implementar sin problema en Java. 
+Para el caso del adaptador de clase, puede hacerse suponiendo que el *target* 
+es una interfaz y no una clase, ya que el adaptador no podría heredar a la vez del 
+*target* y la clase adaptada.

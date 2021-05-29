@@ -1,0 +1,34 @@
+-En la intención del patrón se indica que el cliente debe poder tratar de manera
+uniforme tanto a objetos individuales como compuestos. ¿ Cómo se logra esto 
+con el patrón Composite?
+
+A traves del polimorfimo.
+Se logra creando una interfaz o clase abstracta(componente) que contenga tanto a primimtiva 
+como contenedoras(composites).Logrando que la contenedora sea la que posea una lista de 
+primitivas u otras contenedoras,es decir que posea componentes, ademas de esto va a 
+poder agregar y quitar elementos de esa misma lista. Tanto las contenedoras 
+como las primitivas van a tener un mensaje que es identico, entonces
+en el caso de la contenedora, al mandar ese mensaje, le va a decir a cada elemento 
+de la lista que respete ese mensaje.Logrando asi una estructura arborea recursiva 
+
+
+
+
+-Explique en que casos se aplicaria el patron
+
+Cuando se deba implementar un objeto que posea una estructura jerarquica de tipo arbol. Tambien
+objeto compuesto con multiples niveles de composicion.Otra forma tambien es cuando 
+compartan una misma jerarquia objeto compuesto por instancias de la misma clase o instancias simples que pertenezcan 
+a la misma jerarquia o implementan la misma interfa
+
+
+-Dentro de las consecuencias, se indica que los clientes deben mantenerse 
+-simples y no deben ser conscientes si están interactuando con un objeto hoja o una composición. 
+-¿Que elementos de la programacion orientada a objetos hacen posible esto?
+
+La abstraccion y el polimorfismo, ya que gracias a ella, el cliente no tiene que 
+preocuparse si el objeto que agrega es primivita o compuesto,
+el solo lo agrega como si fueran componentes, es decir elementos abstractos.
+
+
+

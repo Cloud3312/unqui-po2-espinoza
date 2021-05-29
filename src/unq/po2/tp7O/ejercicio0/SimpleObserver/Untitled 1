@@ -1,0 +1,15 @@
+
+Ventajas: El sensor(sujeto) le avisa a todas las dependencias que hubo un cambio en su estado
+   
+desventajas: en el metodo update, se le pasa como parametro un observador y un objeto.
+			Es innecesario ya que el LlamadorBomberos posee al observador como parametro en su 
+			constructor. En el caso de que hubiera varios sensores y los bomberos solo quieran saber
+			de uno en especifico, ahi si tendria sentido utilizar el objeto como parametro, ya que 
+			seria ese objeto el que le informaria el cambio.
+			Y en el caso de tener distintos tipos de temperatura, en la interfaz observable se tendria
+			que mandar distintos tipos de mensaje, corriendo el riesgo de que se rompa el principio
+			de segregacion de interfaces, ya que los bomberos podrian implementar metodos pero 
+			estarian vacios 
+			
+			
+			
