@@ -38,12 +38,12 @@ class CounterTestCase {
 		assertEquals(1, counter.getMultiplosDe(9));
 	}
 
-	@Test 
-	public void testeo() {
-		String a = "abc";
-		String s = a;
-		String t;
-		
-		assertEquals(2,a.substring(1,3).equals("bc"));
-	}
+//	@Test 
+//	public void testeo() {
+//		String a = "abc";
+//		String s = a;
+//		String t;
+//		
+//		assertEquals(2,a.substring(1,3).equals("bc"));
+//	}
 }
