@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import unq.po2.tp3.ejercicio9.EquipoDeTrabajo;
+
 class EquipoDeTrabajoTest {
 
 	private EquipoDeTrabajo equipo;

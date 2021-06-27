@@ -1,0 +1,25 @@
+Correcciones y observaciones
+
+Bad Smells
+-El primer bad smell es que la clase RegistroAutomotor, depende de muchos atributos de la 
+clase Vehiculo.
+
+LocalDate fechaFabricacion = vehiculo.getFechaFabricacion();
+Boolean esVehiculoPolicial = vehiculo.esVehiculoPolicial();
+String ciudadRadicacion = vehiculo.ciudadRadicacion();
+	
+Esto da pie, a que la clase Vehiculo debe definir ese comportamiento, que tanto "arma" la 
+clase RegistroAutomotor, sobre sus atributos.
+
+
+
+
+-Hay un bad smell llamado Comments, el cual se ve aplicado aca, ya que RegistroAutomotor, tiene
+un comentario explicando como es el proceso de armado de ese metodo.Una solucion a esto seria
+o sacar el comentario, o cambiarlo, y que solo diga el resultado final que retorna, sin 
+pasos "intermedios".
+
+
+-Se utilizo move method a la clase vehiculo para responder si ya paso un año de la fabricacion y si
+es de la ciudad de Buenos Aires. Con esto evitamos la envidia de atributos y encapsulamos un comportamiento
+en vehiculo que antes no estaba
