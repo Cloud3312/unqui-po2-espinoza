@@ -1,0 +1,11 @@
+Correcciones y observaciones
+
+Bad Smells
+-El primer bad smell es que en las subclases el codigo esta repetido.
+
+El refactoring que se le podria hacer es un Template method, el "esqueleto" quedaria en la 
+superclase mientras que el calculo que se deba realizar, quedara en las subclases.
+
+-Otro bad smell, son las variables de instancia publicas, un refactor que se le podria hacer
+es pasarlas a privadas. Al momento de querer pedir el saldo, se utilizara un getter, en vez
+de pedirselo a la variable de instancia directamente

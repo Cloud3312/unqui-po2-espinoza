@@ -1,15 +1,11 @@
 package unq.po2.tp9.Ejercicio1EncriptadorTestCase1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when; 
-
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import unq.po2.tp8.ejercicio3.Filtro;
-import unq.po2.tp8.ejercicio3.WikipediaPage;
+
 import unq.po2.tp9.Ejercicio1Encriptador1.EncriptadorDeLetras;
 import unq.po2.tp9.Ejercicio1Encriptador1.EncriptadorDeNumeros;
 import unq.po2.tp9.Ejercicio1Encriptador1.EncriptadorNave;

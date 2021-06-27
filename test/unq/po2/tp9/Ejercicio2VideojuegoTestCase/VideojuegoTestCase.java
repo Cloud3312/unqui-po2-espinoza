@@ -2,13 +2,9 @@
 //
 //import static org.junit.jupiter.api.Assertions.assertEquals;
 //
-//
 //import org.junit.jupiter.api.BeforeEach;
 //import org.junit.jupiter.api.Test;
 //
-//import unq.po2.tp9.Ejercicio1Encriptador.EncriptadorDeLetras;
-//import unq.po2.tp9.Ejercicio1Encriptador.EncriptadorDeNumeros;
-//import unq.po2.tp9.Ejercicio1Encriptador.EncriptadorNave;
 //import unq.po2.tp9.ejercicio2Videojuego.Videojuego;
 //
 //
