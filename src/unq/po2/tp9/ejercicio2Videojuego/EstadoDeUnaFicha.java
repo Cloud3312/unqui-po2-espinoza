@@ -1,6 +1,6 @@
 package unq.po2.tp9.ejercicio2Videojuego;
 
-public class EstadoParaUnJugador implements IEstadoDeJuego {
+public class EstadoDeUnaFicha implements IEstadoDeJuego {
 
 	@Override
 	public String iniciar(Videojuego juego) {

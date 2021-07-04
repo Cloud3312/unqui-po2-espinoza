@@ -1,6 +1,6 @@
 package unq.po2.tp9.Ejercicio1Encriptador1;
 
-public class EncriptadorDeLetras implements IEstadoDeEncriptacion{
+public class EncriptadorDeLetras implements IFormaDeEncriptacion{
 	
 	@Override
 	public String encriptar(String unaPalabra) {

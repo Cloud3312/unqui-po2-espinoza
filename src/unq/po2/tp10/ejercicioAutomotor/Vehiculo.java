@@ -2,6 +2,8 @@ package unq.po2.tp10.ejercicioAutomotor;
 
 import java.time.LocalDate;
 
+// asi queda ahora, al descomentarlo JAVA tira error de class.exception y rompe todos los test
+// del eclipse
 //public class Vehiculo {
 //	private Boolean esVehiculoPolicial;
 //	private LocalDate fechaFabricacion;	
@@ -41,6 +43,7 @@ import java.time.LocalDate;
 //	
 //}
 
+//  asi estaba antes 
 public class Vehiculo {
 	private Boolean esVehiculoPolicial;
 	private LocalDate fechaFabricacion;	

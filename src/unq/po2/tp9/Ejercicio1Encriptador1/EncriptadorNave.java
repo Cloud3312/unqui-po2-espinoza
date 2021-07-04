@@ -2,17 +2,17 @@ package unq.po2.tp9.Ejercicio1Encriptador1;
 
 public class EncriptadorNave {
 	
-	private IEstadoDeEncriptacion estado; 
+	private IFormaDeEncriptacion estado; 
 	
-	public EncriptadorNave(IEstadoDeEncriptacion estado) {
+	public EncriptadorNave(IFormaDeEncriptacion estado) {
 		this.setEstadoDeEncriptacion(estado);
 	}
 	
-	public void setEstadoDeEncriptacion (IEstadoDeEncriptacion estado) {
+	public void setEstadoDeEncriptacion (IFormaDeEncriptacion estado) {
 		this.estado = estado;
 	}
 	
-	public IEstadoDeEncriptacion getEstadoDeEncriptacion() {
+	public IFormaDeEncriptacion getEstadoDeEncriptacion() {
 		return (this.estado);
 	}
 	

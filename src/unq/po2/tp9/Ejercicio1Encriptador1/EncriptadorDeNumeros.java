@@ -3,7 +3,7 @@ package unq.po2.tp9.Ejercicio1Encriptador1;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EncriptadorDeNumeros implements IEstadoDeEncriptacion{
+public class EncriptadorDeNumeros implements IFormaDeEncriptacion{
 
 	private Map<String, String> abecedarioNumerico;
 

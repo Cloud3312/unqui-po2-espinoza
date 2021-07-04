@@ -2,20 +2,20 @@ package unq.po2.tp9.ejercicio2Videojuego;
 
 public class Videojuego {
 
-	private Integer fichas;
+	private int fichines;
 	private IEstadoDeJuego estadoActual;
 
-	public void VideoJuego() {
-		this.fichas = 0;
+	public Videojuego() {
+		this.fichines = 0;
 		this.estadoActual = new EstadoSinFichas();
 	}
 	
-	public Integer getFichas() {
-		return (this.fichas);
+	public int getFichas() {
+		return (this.fichines);
 	}
-
+	
 	public void setFichas(Integer fichas) {
-		this.fichas = fichas;
+		this.fichines = fichas;
 	}
 
 	public IEstadoDeJuego getEstadoActual() {
@@ -27,11 +27,11 @@ public class Videojuego {
 	}
 	
 	public void agregarFicha() {
-		this.fichas++;
+		this.fichines++;
 		if(this.getFichas() == 1) {
-			this.setEstadoDeJuego(new EstadoParaUnJugador());
+			this.setEstadoDeJuego(new EstadoDeUnaFicha());
 		} else if (this.getFichas() >= 2) {
-			this.setEstadoDeJuego(new EstadoParaDosJugadores());
+			this.setEstadoDeJuego(new EstadoDeDosFichas());
 		}
 	}
 
@@ -45,10 +45,11 @@ public class Videojuego {
 	}
 	
 	public void gastarFicha() {
-		this.fichas--;
+		this.fichines--;
 	}
 
 	public void terminoElJuego() {
+		this.setFichas(0);
 		this.setEstadoDeJuego(new EstadoSinFichas());
 	}
 }
