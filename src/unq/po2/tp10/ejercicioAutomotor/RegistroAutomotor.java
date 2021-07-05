@@ -7,11 +7,13 @@ public class RegistroAutomotor {
 	//este es el nuevo, al descomentarlo se rompen todos los tests de java
 	//public Boolean debeRealizarVtv(Vehiculo vehiculo, LocalDate fecha) {
 
-	//return (!(vehiculo.esVehiculoPolicial()) && vehiculo.puedeAplicarParaVtv(fecha));
+	//return ( vehiculo.puedeAplicarParaVtv(fecha));
 	//}	
 		
 	//comments, move method
-	//este es el antiguo
+	
+	
+	//este es el antiguo esto no va 
 	public Boolean debeRealizarVtv(Vehiculo vehiculo, LocalDate fecha) {
 
 		LocalDate fechaFabricacion = vehiculo.getFechaFabricacion();

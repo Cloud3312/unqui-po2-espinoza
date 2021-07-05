@@ -29,7 +29,8 @@ import java.time.LocalDate;
 //	
 //	public Boolean puedeAplicarParaVtv(LocalDate fecha) {
 //		return this.tieneAntiguedadMayorAUnAño(fecha) &&
-//				this.elVehiculoEsDeBuenosAires();
+//				this.elVehiculoEsDeBuenosAires() &&
+//				!(this.esVehiculoPolicial());
 //	}
 //	
 //	private Boolean tieneAntiguedadMayorAUnAño(LocalDate fecha) {

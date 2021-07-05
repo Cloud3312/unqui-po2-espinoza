@@ -25,6 +25,7 @@ public class GestorDePartidos {
 		}
 	}
 
+	//si no esta el aspecto lo crea y le agrega el observer, sino, simplemente le agrega el observer
 	private void vincularAspectoYObserver(String aspecto, IObserver observer) {
 		if(suscriptoresDelAspecto(aspecto) == null) {
 			this.aspectos.put(aspecto, new ArrayList<IObserver>());

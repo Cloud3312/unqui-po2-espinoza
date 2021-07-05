@@ -101,32 +101,51 @@ Stub: es aquel que le preprogramamos respuestas para los mensajes.Le proveen al 
 			assertThrows(Exception.class, () -> auto.acelerar());
 		}
 		
-	
-	
-Spy : El  spy es aquel que se encarga de ser receptor de un mensaje que envia el Sut, 
-	  podemos usarlo en el test verificando dicha interaccion.
+
+Mock: El mock es un objeto similar al Stub. Osea que responde ccon respuestas
+	  preprogramadas pero que aparte tiene la capacidad de verificar que fue
+	  llamado.
 		
- {
-    List<Receta> spyListaDeRecetas = spy(new ArrayList<Receta>());	
-	SistemaDeRecetas sistemaR = new SistemaDeRecetas(spyListaDeRecetas);
-			
-	sistemaR.publicar(dummyReceta);
-	sistemaR.publicar(recetaAptaCeliaco);
+	En este caso se ataca a la entidad que es un mock, y se verifica que le haya llegado 
+	el mensaje recibirDaño
+	//Setup
+	Espada espadaStub = mock(Espada.class);
+	Guerrero guerrero = new Guerrero(espadaStub);
+	Entidad entidad = mock(Entidad.class);
 	
-	// Con el spy verifico que el se le mando correctamente el mensaje add a la collecion dentro del mensaje publicar.
-	assertEquals(sistemaR.cantidadDeRecetasPublicadas(), 2);
+	when(espadaStub.ataque()).thenReturn(10);
 	
-	// Ademas se verifica que el envio de mensajes se haga en orden esperado.	 
-	InOrder orden = inOrder(spyListaDeRecetas);			
-	orden.verify(spyListaDeRecetas).add(dummyReceta);
-	orden.verify(spyListaDeRecetas).add(recetaAptaCeliaco);
-			
-	// Verifico con el spy que se le mando el mensaje size a la colleccion para obtener la cantidad de recetas publicadas.
-	verify(spyListaDeRecetas).size();
-  }
+	//Exercise
+	guerreroAtacar(entidad);
+	
+	//Verificar
+	verify(entidad).recibirDaño(); //Verifica que la entidad recibio el mensaje
+	//recibirDaño()
+
+
+	
 	  
-	  
-	  
+*Spy
+ El spy es un objeto similar al Stub. Que ademas tiene la funcionalidad de
+registrar los mensajes que le envia el SUT. Este tipo de test doubles tiene la
+capacidad de contar con el comportamiento del DOC que reemplaza.
+	
+	//Setup
+	Espada espadaStub = mock(Espada.class);
+	Guerrero guerrero = new Guerrero(espadaStub);
+	Entidad entidad = spy(entidad.class);
+	
+	when(espadaStub.ataque()).thenReturn(10);
+	
+	//Exercise
+	guerreroAtacar(entidad);
+	
+	//Verificar
+	verify(entidad).recibirDaño(); //Verifica que la entidad recibio el mensaje
+	//recibirDaño()
+	assertEquals(entidad.vida(), 0); //Como cuenta con el comportamiento de la
+	//entidad real uno puede verificar que perdió la vida además de verificar 
+	//que recibió el mensaje
 	  
 	  
 	  

@@ -11,23 +11,23 @@ public class AplicacionMovil implements IObserver {
 	
 	public AplicacionMovil() {
 		this.resultadosObtenidos = new ArrayList<String>();
-//		this.intereses = new ArrayList<String>();
+		this.intereses = new ArrayList<String>();
 	}
 	
 	public void suscribirseAGestorDePartidosConInteres(GestorDePartidos gestorDePartidos, Set<String> intereses) {
 		gestorDePartidos.agregarObserver(this, intereses);
-//		this.intereses.addAll(intereses);
+		this.intereses.addAll(intereses);
 	}
 	
 	@Override
 	public void update(Partido partido) {
-//		agregarResultadoDePartido(partido);
-		this.resultadosObtenidos.add(partido.getResultado());
+		agregarResultadoDePartido(partido);
+		//this.resultadosObtenidos.add(partido.getResultado());
 	}
 
-//	private void agregarResultadoDePartido(Partido partido) {
-//		this.resultadosObtenidos.add(partido.getResultado());
-//	}
+	private void agregarResultadoDePartido(Partido partido) {
+		this.resultadosObtenidos.add(partido.getResultado());
+	}
 
 	public List<String> getResultadosObtenidos(){
 		return this.resultadosObtenidos;

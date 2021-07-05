@@ -22,14 +22,14 @@ public class ServidorDeportivo implements IObserver{
 	
 	@Override
 	public void update(Partido partido) {
-		this.partidosRecibidos.add(partido);
+		this.agregarPartido(partido);
 	}
 
-//	private void agregarPartido(Partido partido) {
-//		partidosRecibidos.add(partido);
-//	}
-//
-//	public Set<Partido> getPartidosRecibidos() {
-//		return this.partidosRecibidos;
-//	}
+	private void agregarPartido(Partido partido) {
+		partidosRecibidos.add(partido);
+	}
+
+	public Set<Partido> getPartidosRecibidos() {
+		return this.partidosRecibidos;
+	}
 }

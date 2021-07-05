@@ -16,10 +16,11 @@ de la lista que respete ese mensaje.Logrando asi una estructura arborea recursiv
 
 -Explique en que casos se aplicaria el patron
 
-Cuando se deba implementar un objeto que posea una estructura jerarquica de tipo arbol. Tambien
-objeto compuesto con multiples niveles de composicion.Otra forma tambien es cuando 
-compartan una misma jerarquia objeto compuesto por instancias de la misma clase o instancias simples que pertenezcan 
-a la misma jerarquia o implementan la misma interfa
+ Cuando se deba implementar un objeto que posea una estructura jerarquica de tipo arbol. Tambien
+ objeto compuesto con multiples niveles de composicion.Otra forma tambien es cuando 
+ compartan una misma jerarquia objeto compuesto por instancias de la misma clase o 
+ instancias simples que pertenezcan 
+ a la misma jerarquia o implementan la misma interfaz
 
 
 -Dentro de las consecuencias, se indica que los clientes deben mantenerse 

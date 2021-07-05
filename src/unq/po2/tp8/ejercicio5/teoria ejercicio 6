@@ -1,12 +1,17 @@
-##### 7.6.2.
+##### 7.6.1.
 
 Un adaptador de clase puede adaptar comportamiento de una única 
 clase de la cual hereda, mientras que un adaptador de objeto puede 
-conocer varios objetos que se correspondan a distintas subclases de una clase adaptada.
+conocer varios objetos que se correspondan a distintas subclases de una clase adaptada.(tenerlos como colaborador interno)
 
 En el adaptador de objeto resulta más complicada cambiar cierto comportamiento 
 de la clase adaptada, sin embargo en el adaptador de clase se pueden 
 overridear métodos de la superclase adaptada fácilmente.
+
+##### 7.6.2.
+2)La diferencia consiste en que las clases adaptadoras extienden la clase a
+adaptar mientras que los objetos adaptadores cuentan con una instancia de la
+clase a adaptar
 
 ##### 7.6.3.
 

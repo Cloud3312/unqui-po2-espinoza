@@ -10,10 +10,12 @@ public abstract class LlamadaTelefonica {
 		this.horaDelDia = horaDelDia;		
 	}
 	
+	//operacion concreta
 	public int getTiempo(){
-		return this.tiempo;
+		return this.tiempo; 
 	}
 	
+	//operacion concreta
 	public int getHoraDelDia(){
 		return this.horaDelDia;
 	}

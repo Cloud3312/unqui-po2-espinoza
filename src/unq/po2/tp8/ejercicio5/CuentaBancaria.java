@@ -32,7 +32,7 @@ public abstract class CuentaBancaria {
 	 
 	public void extraer(int monto) {	// template method/esqueleto
 		if(this.condicionDeExtraccion(monto)){	//metodo primitivo definido como abstracto
-			 this.setSaldo(this.getSaldo()-monto);
+			 this.setSaldo(this.getSaldo()-monto); //metodos concretos 
 			 this.agregarMovimientos("Extraccion");
 		 }
 	}
